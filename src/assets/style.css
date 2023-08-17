@@ -1,0 +1,176 @@
+@import './variables.css';
+
+body {
+    min-height: 100vh;
+    color: var(--primary-text-color);
+    background: var(--background-color);
+    transition: color 0.5s, background-color 0.5s;
+    line-height: 1.6;
+    font-family: var(--font-family);
+    font-size: var(--font-size);
+}
+
+.section-wrapper {
+    background: var(--wrapper-background-color);
+    border-radius: 20px;
+    padding: 20px 25px;
+    margin: 10px;
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    background-color: var(--secondary-text-color);
+    margin: 0 10px 0 5px;
+    color: var(--primary-text-color);
+    width: 18px;
+    height: 18px;
+    border: 1px solid var(--secondary-text-color);
+    border-radius: 50%;
+    transform: translateY(-0.075em);
+}
+
+input[type="checkbox"]:checked {
+    border: 1px solid var(--accent-text-color);
+    background: var(--accent-text-color);
+}
+
+input[type="checkbox"]::before {
+    display: block;
+    content: "";
+    width: 13px;
+    height: 10px;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em var(--primary-text-color);
+    transform-origin: bottom left;
+    clip-path: polygon(10% 29%, 0 53%, 47% 100%, 107% 10%, 85% 0%, 43% 62%);
+    position: relative;
+    top: 20%;
+    left: 10%;
+}
+
+input[type="checkbox"]:checked::before {
+    transform: scale(1);
+}
+
+input[type="checkbox"]:focus {
+    outline: max(1px, 0.15em) solid currentColor;
+    outline-offset: unset;
+}
+
+input[type="text"] {
+    border: none;
+    border-bottom: 1px solid transparent;
+    outline: none;
+    background: inherit;
+    padding: 15px 25px;
+    width: 90%;
+    overflow: hidden;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    outline-offset: unset;
+    border-bottom: 1px solid var(--secondary-text-color);
+}
+
+.todo-list {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    border-top: 1px dashed var(--secondary-text-color);
+    padding: 5px 10px 5px 0;
+    list-style: none;
+    max-height: 300px;
+    overflow-y: scroll;
+}
+
+.item-todo {
+    overflow: hidden;
+    border-bottom: 1px dashed var(--secondary-text-color);
+    margin-bottom: 2px;
+}
+
+.item-todo-task, .item-todo-task-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item-todo-task-title {
+    overflow: hidden;
+    padding: 15px 0;
+}
+
+.add-todo {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px 0 0;
+}
+
+.add-todo.item-todo-edit {
+    padding: 0;
+}
+
+.button {
+    background: none;
+    border: none;
+    color: var(--primary-text-color);
+    cursor: pointer;
+}
+
+.button:hover {
+    color: var(--accent-text-color);
+    text-decoration: underline;
+}
+
+button:disabled {
+    cursor: not-allowed;
+    color: var(--secondary-text-color);
+}
+
+button:disabled:hover {
+    cursor: not-allowed;
+    color: var(--secondary-text-color);
+    text-decoration: none;
+}
+
+.todo-list::-webkit-scrollbar {
+    height: 300px;
+    width: 65px;
+    background: #F5F5F5;
+    overflow-y: scroll;
+    padding-left: 5px;
+}
+
+.todo-list::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px var(--secondary-text-color);
+    border-radius: 10px;
+    background-color: #F5F5F5;
+}
+
+.todo-list::-webkit-scrollbar {
+    width: 12px;
+    background-color: #F5F5F5;
+}
+
+.todo-list::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px var(--accent-text-color);
+    background-color: var(--accent-text-color);
+}
+
+.additional-info {
+    color: var(--secondary-text-color);
+}
+
+.accent-text {
+    color: var(--accent-text-color);
+}
+
+.error {
+    border-bottom: 1px solid red !important;
+}

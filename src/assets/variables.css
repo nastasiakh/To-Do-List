@@ -1,0 +1,9 @@
+:root {
+    --background-color: #eee;
+    --wrapper-background-color: #ffffffab;
+    --primary-text-color: #000;
+    --secondary-text-color: #d0d0d0;
+    --accent-text-color: #d1923e;
+    --font-size: 18px;
+    --font-family: "Century Schoolbook L";
+}
